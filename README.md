@@ -25,85 +25,66 @@ Everything has been designed, designed, built and assembled by myself.
 <img src="https://github.com/MatteoBavecchi/Atmosphere/blob/master/Photos/atmosphere_scheme.jpg">
 
 I used the Atmega-328p_au for this project.
-The PCB board is from OSH Park 
+The PCB board has been made by OSH Park.
 
 <a href="https://oshpark.com/shared_projects/vfo74W1z"><img src="https://oshpark.com/assets/badge-5b7ec47045b78aef6eb9d83b3bac6b1920de805e9a0c227658eac6e19a045b9c.png" alt="Order from OSH Park"></img></a>
-## Server
+
+## The webserver
+<p align="center">
+<img src="https://github.com/MatteoBavecchi/Atmosphere/blob/master/Photos/screenshot.png"></p>
+
+Atmosphere communicates with the server http://atmosphere.96.lt and with the Thingspeak server, which can be reached from the IP address 184.106.153.149.
+The dialogue with both servers is limited to a GET request on port 80, let's see how:
 
 
+
+The syntax of the GET request to the Atmosphere server is as follows:
 
 ```
-Give examples
+GET /data.php?mac=1&t=2&h=3&gpl=4&co2=5&co=6
 ```
+1: MAC address that resides in the Atmosphere EEPROM.<br>
+2: Temperature, expressed in degrees centigrade.<br>
+3: Relative humidity, expressed as a percentage.<br>
+4: Quantity of LPG in the air, expressed in ppm.<br>
+5: Amount of CO2 present in the air, expressed in ppm.<br>
+6: Amount of carbon monoxide in the air, expressed in ppm.<br>
 
+
+
+The sintax for send data to the Thingspeak server is as follows:
+
+```
+GET   /update?key=1&field1=2&field2=3&field3=4&field4=5&field5=6
+```
+1: The private key of the Thingspeak account, it's like a password.<br>
+2: Temperature, expressed in degrees centigrade.<br>
+3: Relative humidity, expressed as a percentage.<br>
+4: Quantity of LPG in the air, expressed in ppm.<br>
+5: Amount of CO2 present in the air, expressed in ppm.<br>
+6: Amount of carbon monoxide in the air, expressed in ppm.<br>
+
+
+<br><br>
 ## How the device works
 
-A step by step series of examples that tell you have to get a development env running
 
-Say what the step will be
 
-```
-Give the example
-```
+Atmosphere doesn't need expert users to be used, you just need to power on and it will automatically calibrate itself and begin to analyze the surrounding air, sending, every 30 seconds, the data on the internet.
+Atmosphere has not any button or display that allows you to configure it. To make it connect to your home WiFi network, I created a smartphone app, which can communicate the login credentials to Atmosphere.
 
-And repeat
+### First Startup
+Atmosphere, when powered on, creates a WiFi network, this will be accessible for one minute.
+We connect our smartphone to this network and start the "Atmosphere" App.
+We have two fields to fill, the name of the network and the password, and under the "Send" button.
+Below there's the MAC address of Atmosphere, this must be entered on the website during registration. By doing so, we associate our newly created account with our Atmosphere.
+Let's go back to the smartphone and type the network credentials in the fields and press "Send".
+Atmosphere will store them inside the EEPROM and connect to the desired network.
 
-```
-until finished
-```
+It can be powered with a micro usb cable, but even without this, it works for about an hour thanks to the internal battery.
 
-End with an example of getting some data out of the system or using it for a little demo
+<br><br>
+## Database
 
-## Running the tests
+<img src="https://github.com/MatteoBavecchi/Atmosphere/blob/master/Photos/schema%20logico%20db.jpg">
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
