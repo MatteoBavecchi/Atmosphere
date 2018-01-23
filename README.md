@@ -19,23 +19,24 @@ Any aspect has been studied to be as much as possible oriented towards an untrai
 The device is mainly composed of a customized electronic board and a plastic case manufactured with the 3D printer.<br>
 Everything has been designed, designed, built and assembled by myself.
 
-# Project Title
 
-One Paragraph of project description goes here
+## PCB Board Design
 
-## Getting Started
+<img src="https://github.com/MatteoBavecchi/Atmosphere/blob/master/Photos/atmosphere_scheme.jpg">
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+I used the Atmega-328p_au for this project.
+The PCB board is from OSH Park 
 
-### Prerequisites
+<a href="https://oshpark.com/shared_projects/vfo74W1z"><img src="https://oshpark.com/assets/badge-5b7ec47045b78aef6eb9d83b3bac6b1920de805e9a0c227658eac6e19a045b9c.png" alt="Order from OSH Park"></img></a>
+## Server
 
-What things you need to install the software and how to install them
+
 
 ```
 Give examples
 ```
 
-### Installing
+## How the device works
 
 A step by step series of examples that tell you have to get a development env running
 
