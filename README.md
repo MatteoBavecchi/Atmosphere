@@ -7,16 +7,16 @@ Air Quality Home Device
 
 ## Introduction
 
-Atmosphere is the prototype of a device that detects some values of the surrounding air and signals to the user when it seems not to be livable.
+Atmosphere is the prototype of a device that detects some values of the surrounding air and let the the user know when it seems not to be livable.
 
-All this is possible with the use of gas sensors, temperature sensors, a buzzer and a WiFi module that sends the data collected to two servers.
+All this is possible with the use of gas sensors, temperature sensors, a buzzer and a WiFi module which sends data collected to two servers.
 
-The goal of the project is its marketing, in fact the Atmosphere ecosystem manages more than one user and catalogs the data sent by the various devices in a single database.
+The goal of the project is create a costomer product, in fact the Atmosphere ecosystem manages more than one user and catalogs the data sent by the various devices in a single database.
 
 Any aspect has been studied to be as much as possible oriented towards an untrained user, and mobile friendly, that is viewable and configurable correctly from any mobile device.
 
 
-The device is mainly composed of a customized electronic board and a plastic case manufactured with the 3D printer.<br>
+The device is mainly composed by a customized electronic board and a plastic case manufactured with a 3D printer.<br>
 Everything has been designed, designed, built and assembled by myself.
 
 
@@ -57,8 +57,8 @@ The sintax for send data to the Thingspeak server is as follows:
 ```
 GET   /update?key=1&field1=2&field2=3&field3=4&field4=5&field5=6
 ```
-1: The private key of the Thingspeak account, it's like a password.<br>
-2: Temperature, expressed in degrees centigrade.<br>
+1: Thingspeak private key<br>
+2: Temperature, in degrees centigrade.<br>
 3: Relative humidity, expressed as a percentage.<br>
 4: Quantity of LPG in the air, expressed in ppm.<br>
 5: Amount of CO2 present in the air, expressed in ppm.<br>
